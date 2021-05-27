@@ -30,6 +30,11 @@ public class DummyRevisionApi implements RevisionApi {
         return getFileApi(path);
     }
 
+    @Override
+    public CommitInfo commit(boolean b) throws RestApiException {
+        return null;
+    }
+
     private FileApi getFileApi(final String path) {
         return new FileApi() {
             @Override
@@ -101,7 +106,17 @@ public class DummyRevisionApi implements RevisionApi {
     }
 
     @Override
-    public void review(ReviewInput in) throws RestApiException {
+    public String description() throws RestApiException {
+        return "";
+    }
+
+    @Override
+    public void description(String s) throws RestApiException {
+
+    }
+
+    @Override
+    public ReviewResult review(ReviewInput in) throws RestApiException {
         throw new UnsupportedOperationException("This is a dummy test class");
     }
 
@@ -138,6 +153,11 @@ public class DummyRevisionApi implements RevisionApi {
     @Override
     public boolean canRebase() {
         throw new UnsupportedOperationException("This is a dummy test class");
+    }
+
+    @Override
+    public RevisionReviewerApi reviewer(String s) throws RestApiException {
+        return null;
     }
 
     @Override
@@ -236,6 +256,11 @@ public class DummyRevisionApi implements RevisionApi {
     }
 
     @Override
+    public String etag() throws RestApiException {
+        return null;
+    }
+
+    @Override
     public Map<String, List<RobotCommentInfo>> robotComments() throws RestApiException {
         throw new UnsupportedOperationException("This is a dummy test class");
     }
@@ -246,8 +271,18 @@ public class DummyRevisionApi implements RevisionApi {
     }
 
     @Override
+    public EditInfo applyFix(String s) throws RestApiException {
+        return null;
+    }
+
+    @Override
     public BinaryResult submitPreview() throws RestApiException {
         throw new UnsupportedOperationException("This is a dummy test class");
+    }
+
+    @Override
+    public BinaryResult submitPreview(String s) throws RestApiException {
+        return null;
     }
 
     @Override

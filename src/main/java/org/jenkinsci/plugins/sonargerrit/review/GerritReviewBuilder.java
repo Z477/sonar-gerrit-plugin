@@ -110,6 +110,7 @@ public class GerritReviewBuilder {
         commentInput.id = input.getKey();
         commentInput.line = input.getLine();
         commentInput.message = message;
+        commentInput.unresolved = true;
         return commentInput;
     }
 
